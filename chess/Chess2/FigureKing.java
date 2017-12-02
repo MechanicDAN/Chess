@@ -32,12 +32,14 @@ public class FigureKing extends ChessFigure {
 			if ((y - to_y == 0 && to_y - y == 0) && (x - to_x == 2) && Worker.Field[0][0].rok() == 0)
 				if (!Worker.Field[to_x][to_y].isActive && !Worker.Field[to_x + 1][to_y].isActive && !Worker.Field[to_x - 1][to_y].isActive) {
 					Worker.Field[3][to_y] = Worker.Field[0][to_y];
+					Worker.Field[3][to_y].Move((byte)3,to_y);
 					Worker.Field[0][to_y] = new EmptyFigure((byte) 0, to_y);
 					return true;
 				}
 			if ((y - to_y == 0 && to_y - y == 0) && (to_x - x == 2) && Worker.Field[7][0].rok() == 0)
 				if(!Worker.Field[to_x][to_y].isActive && !Worker.Field[x+1][to_y].isActive){
 					Worker.Field[5][to_y] = Worker.Field[7][to_y];
+					Worker.Field[5][to_y].Move((byte)5,to_y);
 					Worker.Field[7][to_y] = new EmptyFigure((byte) 0, to_y);
 					return true;
 				}
