@@ -98,6 +98,7 @@ public class Worker {
 		boolean flag = true;
 		String input = sc.nextLine().toLowerCase();
 		if (input != null) {
+			try{
 			Coor[0] = (byte) (input.charAt(0) - 'a');// from X
 			Coor[1] = (byte) (input.charAt(1) - '1');// from Y
 			Coor[2] = (byte) (input.charAt(3) - 'a');// to X
@@ -106,6 +107,8 @@ public class Worker {
 				if (Coor[i] < 0 || Coor[i] > 7)
 				{flag = false;System.out.println("False");}
 			if((Coor[0]==Coor[2])&&(Coor[1]==Coor[3])) {flag = false;System.out.println("False");}
+			}
+			catch(Exeption e){flag = flase}
 			if (logs) {
 				System.out.println(input);
 				for (byte i = 0; i < Coor.length; i++)
